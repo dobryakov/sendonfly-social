@@ -45,3 +45,4 @@ end
 
 gem "koala", "~> 1.11.0rc"
 gem "mysql2"
+gem "codeclimate-test-reporter", group: :test, require: nil
