@@ -20,8 +20,11 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+
+group :doc do
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+  gem 'sdoc', '~> 0.4.0'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -45,4 +48,7 @@ end
 
 gem "koala", "~> 1.11.0rc"
 gem "mysql2"
-gem "codeclimate-test-reporter", group: :test, require: nil
+
+group :test do
+  gem "codeclimate-test-reporter"
+end
