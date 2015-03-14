@@ -16,4 +16,11 @@ class FacebookProfile < Profile
     end
   end
 
+  def inbox
+    if self.token
+      graph = Koala::Facebook::API.new(self.token)
+      graph.get_object("me/inbox")
+    end
+  end
+
 end
