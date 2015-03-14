@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150314192317) do
+ActiveRecord::Schema.define(version: 20150314215345) do
+
+  create_table "messages", force: :cascade do |t|
+    t.text     "content",     limit: 65535
+    t.integer  "profile_id",  limit: 4
+    t.string   "type",        limit: 255
+    t.string   "facebook_id", limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "messages", ["profile_id"], name: "index_messages_on_profile_id", using: :btree
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id",     limit: 4
@@ -20,6 +31,7 @@ ActiveRecord::Schema.define(version: 20150314192317) do
     t.datetime "updated_at",              null: false
     t.string   "token",       limit: 255
     t.string   "facebook_id", limit: 255
+    t.string   "name",        limit: 255
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
@@ -29,5 +41,6 @@ ActiveRecord::Schema.define(version: 20150314192317) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "messages", "profiles"
   add_foreign_key "profiles", "users"
 end

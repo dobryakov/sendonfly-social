@@ -23,4 +23,24 @@ class FacebookProfile < Profile
     end
   end
 
+  def parse
+    self.inbox.each { |conversation|
+      conversation['comments']['data'].each { |item|
+
+        if item['from'] && item['from']['id']
+
+          profile = FacebookProfile.find_or_create_by( facebook_id: item['from']['id'] )
+          profile.update( name: item['from']['name'] ) if !profile.name && item['from']['name']
+
+          message = FacebookMessage.find_or_create_by( facebook_id: item['id'] )
+          message.update( profile: profile,
+                          content: item['message'] ) if !message.content
+
+        end
+
+      }
+    }
+    true
+  end
+
 end
