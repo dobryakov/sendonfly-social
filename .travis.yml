@@ -1,5 +1,9 @@
 rvm:
   - 2.2
+
+before_script:
+  - psql -c 'create database sendonfly-social-test;' -U postgres
+
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
@@ -11,3 +15,4 @@ notifications:
 addons:
   code_climate:
     repo_token: 1e94e66ad5e8460f0b1fb3eb897a6475911f6ceb585226d347495ee0f71f8951
+  postgresql: "9.3"
