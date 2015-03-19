@@ -52,3 +52,7 @@ gem "mysql2"
 group :test do
   gem "codeclimate-test-reporter"
 end
+
+group :production do
+  gem 'pg'
+end
