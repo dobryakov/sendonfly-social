@@ -5,6 +5,9 @@ script:
   - bundle exec rake db:test:prepare
   - bundle exec rake
 
+notifications:
+  hipchat: 3bf913639d5695d46817576a7f94dd@default
+
 addons:
   code_climate:
     repo_token: 1e94e66ad5e8460f0b1fb3eb897a6475911f6ceb585226d347495ee0f71f8951
