@@ -25,7 +25,5 @@ test:
 
 production:
   <<: *default
-  host:     ec2-54-163-228-58.compute-1.amazonaws.com
-  username: qcnohtdxixipdu
-  password: oK_4SiW__6RQ2b0uh5fgCUgo9l
-  database: d25qm19lq54cjg
+  adapter: postgresql
+  url:     <%= ENV['DATABASE_URL'] %>
