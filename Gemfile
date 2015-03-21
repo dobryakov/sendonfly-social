@@ -53,3 +53,5 @@ gem 'pg'
 group :test do
   gem "codeclimate-test-reporter"
 end
+
+gem 'rollbar', '~> 1.4.4'
