@@ -10,7 +10,7 @@ script:
   - bundle exec rake
 
 notifications:
-  hipchat: 3bf913639d5695d46817576a7f94dd@1335283
+  hipchat: <%= ENV['HIPCHAT_TOKEN'] %>@1335283
 
 addons:
   code_climate:
