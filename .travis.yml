@@ -14,5 +14,5 @@ notifications:
 
 addons:
   code_climate:
-    repo_token: 1e94e66ad5e8460f0b1fb3eb897a6475911f6ceb585226d347495ee0f71f8951
+    repo_token: <%= ENV['CODECLIMATE_TOKEN'] %>
   postgresql: "9.3"
