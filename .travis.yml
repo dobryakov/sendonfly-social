@@ -10,9 +10,11 @@ script:
   - bundle exec rake
 
 notifications:
-  hipchat: <%= ENV['HIPCHAT_TOKEN'] %>@1335283
+  hipchat:
+    secure: "as9SSyEzKZqT1jk3+cT5hvUt4NKMyedA3xrNqRIyq6F9fAQp7MMz2kjmOKeBxzHZt0wb89H623X1Phl5TJOMD3vpEPmcnp3TJ76jrJDxamHvppo0A7Ui2ZR/lFS4R808pjPnETwISvSevd2cyazPaQ/U9gt5C3YVnUqfOOLHYFg="
 
 addons:
   code_climate:
-    repo_token: <%= ENV['CODECLIMATE_TOKEN'] %>
+    repo_token:
+      secure: "qt2E+oGniD/QBns+clhcD76p33TZ8dff8KKQN6a6NA7HU9XyNZ+D3GVXOVZ9vgTUm2rq1aYpMoN2g3MjLtcoOgLiDMW/u43qgDPvZJf+QWRuQHfbvEbQ5t1C45noNrKlX8XDDXwS6QaF4OGTPEtRlSx8c+9b8jZ82CbyPxVvvKs="
   postgresql: "9.3"
